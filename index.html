@@ -96,6 +96,13 @@
             margin: 0;
             font-size: 0.9rem;
         }
+    
+        .small-photo {
+          width: 150px;
+          height: auto; /* Keeps aspect ratio */
+          border-radius: 10px; /* Optional: Adds rounded corners */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -128,7 +135,7 @@
         </section>
         <div class="photo">
             <h2>My Photo</h2>
-            <img src="images/Megan_Parada.jpeg" alt="A placeholder for my personal photo">
+            <img src="images/Megan_Parada.jpeg" alt="A placeholder for my personal photo" class="small-photo">
         </div>
         <section id="projects">
             <h2>Projects</h2>

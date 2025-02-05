@@ -1,145 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Smooch+Sans:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-<style>
-        /* General Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fef6fb; /* Light pastel pink */
-            color: #333;
-        }
+    <title>Megan Parada</title>
+    <link rel="stylesheet" type="text/css" href="style/index.css" />
+  </head>
 
-        /* Header */
-        header {
-            background: linear-gradient(to right, #ff9a9e, #fecfef); /* Pink gradient */
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 5px solid #ff6f91;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        /* Navigation */
-        nav {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #ff6f91;
-            font-weight: bold;
-            border: 2px solid transparent;
-            padding: 5px 15px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #ff6f91;
-            color: white;
-            border-color: #ff6f91;
-        }
-
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-        }
-
-        h2 {
-            color: #ff6f91;
-            font-size: 1.8rem;
-        }
-
-        /* Photo Section */
-        .photo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .photo img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
-            border: 5px solid #ff9a9e;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #ff6f91;
-            color: white;
-            border-top: 5px solid #ff9a9e;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            nav a {
-                margin: 0 10px;
-                padding: 5px 10px;
-            }
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <header>
-        <h1>Welcome to My Personal Website</h1>
+      <h1>Hi! I'm <span class="name" id="name">Megan Parada</span></h1>
     </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-buttons">
+      <img id="lemon" src="./images/lemon.png" />
+      <img id="lime" src="./images/lime_1.png" />
+      <img id="grapefruit" src="./images/grapefruit.png" />
+    </div>
     <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Megan Parada. Welcome to my personal website where I share my projects, interests, and more about myself. </p>
-        </section>
-        <div class="photo">
-            <h2>My Photo</h2>
-            <img src="/images/Megan_Parada.jpeg" alt="A placeholder for my personal photo">
-        </div>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Check out some of my latest work and exciting projects!</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out via email or connect with me on social media.</p>
-        </section>
+      <div class="photo">
+        <img
+          src="./images/Megan_Parada.jpeg"
+          alt="A placeholder for my personal photo"
+        />
+      </div>
     </div>
     <footer>
-        <p>&copy; 2024 Megan Parada. All Rights Reserved.</p>
+      <p>&copy; 2024 Megan Parada. All Rights Reserved.</p>
     </footer>
-</body>
-
+    <script src="scripts/page.js"></script>
+  </body>
 </html>

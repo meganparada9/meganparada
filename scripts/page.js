@@ -19,3 +19,43 @@ function changeFont() {
 }
 
 setInterval(changeFont, 3000); // Change font every 3 seconds
+
+const tooltipBox = document.getElementById("tooltipBox");
+
+function tooltip_show_lemon() {
+  $("#tooltipBoxLemon").text("About Me");
+  $("#tooltipBoxLemon").css("display", "block");
+  const rect = img.getBoundingClientRect();
+  tooltipBox.style.top = window.scrollY + rect.bottom + 5 + "px";
+  tooltipBox.style.left =
+    window.scrollX +
+    rect.left +
+    rect.width / 2 -
+    tooltipBox.offsetWidth / 2 +
+    "px";
+  $("#tooltipBoxLemon").show();
+}
+
+function tooltip_hide_lemon() {
+  $("#tooltipBoxLemon").hide();
+}
+
+function tooltip_show_lime() {
+  $("#tooltipBoxLime").text("Professional Experience");
+  $("#tooltipBoxLime").css("display", "block");
+  $("#tooltipBoxLime").show();
+}
+
+function tooltip_hide_lime() {
+  $("#tooltipBoxLime").hide();
+}
+
+function tooltip_show_grape() {
+  $("#tooltipBoxGrape").text("Classwork & Projects");
+  $("#tooltipBoxGrape").css("display", "block");
+  $("#tooltipBoxGrape").show();
+}
+
+function tooltip_hide_grape() {
+  $("#tooltipBoxGrape").hide();
+}

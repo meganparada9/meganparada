@@ -42,6 +42,14 @@ h1 {
   }
 }
 
+title {
+  flex-grow: 1; /* Pushes text to the center */
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
 /* Navigation */
 nav {
   margin: 20px 0;
@@ -84,6 +92,92 @@ h2 {
 .photo {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.tooltip-box {
+  position: absolute;
+  background-color: #efcf14;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: white;
+  white-space: nowrap;
+  font-size: 14px;
+  display: none;
+  margin-left: 13.5px;
+  margin-top: 115px;
+  pointer-events: none;
+}
+
+.tooltip-box-lime {
+  position: absolute;
+  background-color: #c6d223;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: white;
+  white-space: nowrap;
+  font-size: 14px;
+  display: none;
+  margin-left: 200px;
+  margin-top: 110px;
+  pointer-events: none;
+}
+
+.tooltip-box-grapefruit {
+  position: absolute;
+  background-color: #f47470;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: white;
+  white-space: nowrap;
+  font-size: 14px;
+  display: none;
+  margin-left: 415px;
+  margin-top: 110px;
+  pointer-events: none;
+}
+
+#git {
+  width: 3.5%;
+}
+
+#linkedin {
+  width: 3%;
+  height: auto;
+  display: inline-block; /* Ensures no unnecessary space */
+}
+
+#resume {
+  width: 4%;
+}
+
+#icon-header {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  gap: 20px;
+  left: 10px;
+
+  /* flex-direction: row; */
+}
+
+a {
+  text-decoration: none; /* Removes underline */
+  border: none; /* Removes any default borders */
+  margin: 0; /* Removes any extra spacing around */
+  padding: 0; /* Ensures no extra space inside */
+  display: inline-block;
+}
+
+a img {
+  display: block;
+}
+
+.image-button {
+  cursor: pointer;
+  width: 100px;
 }
 
 .photo img {

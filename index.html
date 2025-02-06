@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Smooch+Sans:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Smooch+Sans:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
 
@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <header>
+    <header id="header">
       <div id="icon-header">
         <img
           id="git"
@@ -27,7 +27,9 @@
           src="./images/linkedin.jpg"
           onclick="window.location.href='https://www.linkedin.com/in/megan-parada-umich/';"
         />
-        <img id="resume" src="./images/resume-7.png" />
+        <a href="./images/resume.pdf" download="Megan_Parada_Resume.pdf"
+          ><img id="resume" src="./images/resume-7.png"
+        /></a>
       </div>
       <h1>Hi! I'm <span class="name" id="name">Megan Parada</span></h1>
     </header>
@@ -37,25 +39,34 @@
         id="lemon"
         onmouseover="tooltip_show_lemon()"
         onmouseleave="tooltip_hide_lemon()"
-        src="./images/lemon.png"
+        src="./images/new_sticker.png"
       />
-      <div class="tooltip-box" id="tooltipBoxLemon"></div>
+      <!-- <button class="sticker-button">About Me</button> -->
+      <!-- <div class="tooltip-box" id="tooltipBoxLemon"></div> -->
+      <!-- <button>About Me</button> -->
+      <!-- <button id="experience">Professional Experience</button>
+      <button id="experience">Classwork & Projects</button> -->
       <img
         id="lime"
         onmouseover="tooltip_show_lime()"
         onmouseleave="tooltip_hide_lime()"
-        src="./images/lime_1.png"
+        src="./images/prof.png"
       />
-      <div class="tooltip-box-lime" id="tooltipBoxLime"></div>
+      <!-- <div class="tooltip-box-lime" id="tooltipBoxLime"></div> -->
       <img
         id="grapefruit"
         onmouseover="tooltip_show_grape()"
         onmouseleave="tooltip_hide_grape()"
-        src="./images/grapefruit.png"
+        src="./images/new_classes.png"
       />
-      <div class="tooltip-box-grapefruit" id="tooltipBoxGrape"></div>
+      <!-- <div class="tooltip-box-grapefruit" id="tooltipBoxGrape"></div> -->
     </div>
     <div class="container">
+      <div>
+        I'm Megan Parada, a senior studying Computer Science and UX Design at
+        the University of Michigan. Upon my graduation in May, I will be working
+        for Nike as a Software Engineer!
+      </div>
       <div class="photo">
         <img
           src="./images/Megan_Parada.jpeg"

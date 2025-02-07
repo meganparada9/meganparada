@@ -1,24 +1,43 @@
-const fonts = [
-  "'Roboto', sans-serif",
-  "'Playfair Display', serif",
-  "'Smooch Sans', serif",
+const words = [
+  "Megan Parada",
+  "a Software Engineer",
+  "a Wolverine",
+  "a Designer",
 ];
-let index = 0;
-const nameElement = document.getElementById("name");
-const nameText = "Megan Parada";
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 100;
+const deletingSpeed = 50;
+const pauseTime = 1500;
 
-function changeFont() {
-  nameElement.style.opacity = "0"; // Fade out effect
+function typeEffect() {
+  const typingElement = document.getElementById("typing");
+  let currentWord = words[wordIndex];
 
-  setTimeout(() => {
-    index = (index + 1) % fonts.length; // Rotate fonts
-    console.log(fonts[index]);
-    nameElement.style.fontFamily = fonts[index];
-    nameElement.style.opacity = "1"; // Fade back in
-  }, 500); // Delay for smooth transition
+  if (isDeleting) {
+    typingElement.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingElement.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let typingDelay = isDeleting ? deletingSpeed : typingSpeed;
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    typingDelay = pauseTime;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    typingDelay = 500;
+  }
+
+  setTimeout(typeEffect, typingDelay);
 }
 
-// setInterval(changeFont, 3000); // Change font every 3 seconds
+document.addEventListener("DOMContentLoaded", typeEffect);
 
 const tooltipBox = document.getElementById("tooltipBox");
 

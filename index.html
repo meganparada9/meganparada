@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/MP_header.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +32,7 @@
           ><img id="resume" src="./images/resume-7.png"
         /></a>
       </div>
-      <h1>Hi! I'm <span class="name" id="name">Megan Parada</span></h1>
+      <h1>Hi! I'm <span id="typing"></span><span class="cursor"></span></h1>
     </header>
     <div class="nav-buttons">
       <img
@@ -48,12 +49,15 @@
       <button id="experience">Classwork & Projects</button> -->
       <img
         id="lime"
+        class="image-button"
         onmouseover="tooltip_show_lime()"
         onmouseleave="tooltip_hide_lime()"
+        onclick="window.location.href='professional.html';"
         src="./images/prof.png"
       />
       <!-- <div class="tooltip-box-lime" id="tooltipBoxLime"></div> -->
       <img
+        class="image-button"
         id="grapefruit"
         onmouseover="tooltip_show_grape()"
         onmouseleave="tooltip_hide_grape()"

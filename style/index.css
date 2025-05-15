@@ -6,8 +6,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  /* background-color: #fef6fb; Light pastel pink */
-  background-image: url("../images/secondpink.jpg");
+  background-color: white;
+  /* background-image: url("../images/secondpink.jpg"); */
   color: #333;
   align-items: center;
   position: absolute;
@@ -89,6 +89,24 @@ nav a:hover {
   border-radius: 20px;
 }
 
+.project {
+  max-width: 900px;
+  width: 400px;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* space between projects */
+  padding: 20px;
+}
+
 h2 {
   color: #ff6f91;
   font-size: 1.8rem;
@@ -147,6 +165,11 @@ h2 {
 
 #git {
   width: 3.5%;
+  cursor: pointer;
+}
+
+#home {
+  width: 9%;
   cursor: pointer;
 }
 
@@ -226,6 +249,10 @@ a img {
   animation: bounce 0.5s ease-in-out;
 }
 
+.project:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
 @keyframes bounce {
   0%,
   100% {
@@ -244,12 +271,23 @@ a img {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.project-img img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #f093be;
+}
+
+.project-img {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .nav-buttons {
   display: flex;
   justify-content: center;
   position: relative;
-  margin-right: 75px;
-  gap: 30px;
+  margin-right: 5em;
+  gap: 5em;
   align-items: center;
 }
 
@@ -267,9 +305,11 @@ footer {
 
 #lemon {
   width: 15%;
-  height: auto;
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 #lime {
@@ -277,6 +317,8 @@ footer {
   height: auto;
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  display: block;
 }
 
 #grapefruit {
@@ -284,6 +326,8 @@ footer {
   height: auto;
   margin: 0;
   padding: 0;
+  max-width: 100%;
+  display: block;
 }
 
 footer p {

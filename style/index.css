@@ -96,7 +96,7 @@ nav a:hover {
   margin: 20px auto;
   padding: 20px;
   background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px #ff6f91;
   border-radius: 20px;
 }
 
@@ -161,6 +161,10 @@ h2 {
   margin-left: 415px;
   margin-top: 110px;
   pointer-events: none;
+}
+
+.project-text {
+  margin-bottom: 20px;
 }
 
 #git {
@@ -272,8 +276,9 @@ a img {
 }
 
 .project-img img {
-  max-width: 100%;
-  height: auto;
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
   border: 5px solid #f093be;
 }
 

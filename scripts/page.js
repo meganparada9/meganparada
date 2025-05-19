@@ -41,32 +41,28 @@ document.addEventListener("DOMContentLoaded", typeEffect);
 
 const tooltipBox = document.getElementById("tooltipBox");
 
-function tooltip_show_lemon() {
-  $("#tooltipBoxLemon").text("About Me");
-  $("#tooltipBoxLemon").css("display", "block");
-  $("#tooltipBoxLemon").show();
+function rightFact() {
+  if ($("#number").text() == 3) {
+    return;
+  }
+  // hide the previous one
+  var next_fact = "#fact" + (Number($("#number").text()) + 1);
+  var current_fact = "#fact" + Number($("#number").text());
+  console.log(next_fact);
+  $(current_fact).hide();
+  $(next_fact).show();
+  $("#number").text(Number($("#number").text()) + 1);
 }
 
-function tooltip_hide_lemon() {
-  $("#tooltipBoxLemon").hide();
-}
-
-function tooltip_show_lime() {
-  $("#tooltipBoxLime").text("Professional Experience");
-  $("#tooltipBoxLime").css("display", "block");
-  $("#tooltipBoxLime").show();
-}
-
-function tooltip_hide_lime() {
-  $("#tooltipBoxLime").hide();
-}
-
-function tooltip_show_grape() {
-  $("#tooltipBoxGrape").text("Classwork & Projects");
-  $("#tooltipBoxGrape").css("display", "block");
-  $("#tooltipBoxGrape").show();
-}
-
-function tooltip_hide_grape() {
-  $("#tooltipBoxGrape").hide();
+function leftFact() {
+  if ($("#number").text() == 1) {
+    return;
+  }
+  // hide the previous one
+  var next_fact = "#fact" + (Number($("#number").text()) - 1);
+  var current_fact = "#fact" + Number($("#number").text());
+  console.log(next_fact);
+  $(current_fact).hide();
+  $(next_fact).show();
+  $("#number").text(Number($("#number").text()) - 1);
 }

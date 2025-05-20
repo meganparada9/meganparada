@@ -66,3 +66,141 @@ function leftFact() {
   $(next_fact).show();
   $("#number").text(Number($("#number").text()) - 1);
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  let oldX = 0,
+    oldY = 0,
+    deltaX = 0,
+    deltaY = 0;
+
+  const root = document.querySelector(".mwg_effect000");
+  root.addEventListener("mousemove", (e) => {
+    deltaX = e.clientX - oldX;
+    deltaY = e.clientY - oldY;
+    oldX = e.clientX;
+    oldY = e.clientY;
+  });
+
+  root.querySelectorAll(".media").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      const tl = gsap.timeline({
+        onComplete: () => tl.kill(),
+      });
+
+      const image = el.querySelector("img");
+
+      // Simulate movement based on mouse speed
+      tl.to(image, {
+        x: deltaX * 1.5,
+        y: deltaY * 1.5,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+
+      // Snap back to original position
+      tl.to(image, {
+        x: 0,
+        y: 0,
+        duration: 0.4,
+        ease: "power2.inOut",
+      });
+
+      // Rotation animation
+      tl.fromTo(
+        image,
+        { rotate: 0 },
+        {
+          duration: 0.4,
+          rotate: (Math.random() - 0.5) * 30,
+          yoyo: true,
+          repeat: 1,
+          ease: "power1.inOut",
+        },
+        "<"
+      );
+    });
+  });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const textEl = document.querySelector("#text");
+  textEl.style.opacity = 1;
+
+  // Split into words
+  const words = textEl.innerText.trim().split(" ");
+  textEl.innerHTML = ""; // Clear original text
+
+  const tempLine = document.createElement("div");
+  tempLine.style.display = "inline-block";
+  tempLine.style.whiteSpace = "nowrap";
+
+  let lines = [];
+  let currentLine = document.createElement("div");
+  currentLine.classList.add("line");
+
+  document.body.appendChild(tempLine); // Append once
+
+  for (let i = 0; i < words.length; i++) {
+    const wordSpan = document.createElement("span");
+    wordSpan.textContent = words[i] + " ";
+    wordSpan.style.display = "inline-block";
+
+    tempLine.appendChild(wordSpan);
+
+    if (tempLine.offsetWidth > textEl.offsetWidth && i !== 0) {
+      lines.push(currentLine);
+      currentLine = document.createElement("div");
+      currentLine.classList.add("line");
+      currentLine.appendChild(wordSpan);
+      tempLine.innerHTML = wordSpan.outerHTML;
+    } else {
+      currentLine.appendChild(wordSpan.cloneNode(true));
+    }
+  }
+
+  lines.push(currentLine);
+  document.body.removeChild(tempLine);
+
+  lines.forEach((line) => {
+    const spanWrapper = document.createElement("span");
+    spanWrapper.innerHTML = line.innerHTML;
+    line.innerHTML = "";
+    line.appendChild(spanWrapper);
+    textEl.appendChild(line);
+  });
+
+  gsap.from("#text .line span", {
+    yPercent: 100,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: "expo.out",
+  });
+});
+
+const facts = [
+  "I love lemons!",
+  "Elephants are my favorite animal.",
+  "I still use the digital camera I got in 8th grade and use it to capture my life.",
+  "I love collecting random things like Sonny Angels and Jellycats.",
+  "My last name often gets mistaken for the brand Prada. I am (unfortunately) not related in any way.",
+  "I graduated from the University of Michigan and lived in the Ann Arbor area for most of my life.",
+  "I was born in upstate New York. I'm always on the hunt for the best Buffalo wing anywhere I go.",
+  "My favorite ice cream flavor is mint chocolate chip.",
+  "I'm obsessed with cats.",
+  "I love checking out local libraries for new books.",
+  "I'm an absolute foodie. Here is a picture of my meal I had in Nashville, TN!",
+  "Clue is my favorite board game ever, but the Clue movie is even better.",
+];
+function showOverlay(num) {
+  console.log("num", num);
+  console.log($("#facts-text").innerHTML);
+  $(".overlay").show();
+  $("#facts-text").text(facts[num]);
+  $(".facts").show();
+}
+
+function closeOverlay() {
+  $(".overlay").hide();
+  $(".facts").hide();
+}

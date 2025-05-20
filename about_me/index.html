@@ -24,18 +24,18 @@
       </div>
       <h1>About Me</h1>
     </header>
-    <h2>
+    <h2 id="about-me">
       As a motivated person early in my career, it is my goal to learn as much
       as possible about the software engineering space and provide creative,
       innovative solutions to problems. Outside of work, I have many passions
       such as music, photography, food, and sports.
     </h2>
-    <div class="fun-facts-header">
+    <!-- <div class="fun-facts-header">
       Fun Facts <span id="number">1</span><span>/3</span>
-      <button onclick="rightFact()" id="right-button">
+      <button class="facts-button" onclick="rightFact()" id="right-button">
         <i class="arrow right"></i>
       </button>
-      <button onclick="leftFact()" id="left-button">
+      <button class="facts-button" onclick="leftFact()" id="left-button">
         <i class="arrow left"></i>
       </button>
     </div>
@@ -45,12 +45,84 @@
       pictures with it and have captured most of my college experience through
       my camera coined "Megan's cam."
     </div>
-    <div class="facts" id="fact2">I see</div>
-    <div class="facts" id="fact3">I like</div>
+    <div class="facts" id="fact2">
+      Originally being from upstate New York, I love chicken wings and am always
+      on the hunt to find the perfect wing every where I visit.
+      <img src="../images/IMG_0735.jpg" />
+    </div>
+    <div class="facts" id="fact3"></div> -->
+
+    <!-- <div class="split" id="text">
+      As a motivated person early in my career, it is my goal to learn as much
+      as possible about the software engineering space and provide creative,
+      innovative solutions to problems. Outside of work, I have many passions
+      such as music, photography, food, and sports.
+    </div> -->
+
+    <div class="facts">
+      <button onclick="closeOverlay()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+          />
+        </svg>
+      </button>
+      <span id="facts-text">I love lemons!</span>
+    </div>
+    <div class="overlay"></div>
+    <section class="mwg_effect000">
+      <div class="medias">
+        <div class="media" onclick="showOverlay(0)">
+          <img src="../images/lemon.png" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(1)">
+          <img src="../images/elephant.jpeg" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(2)">
+          <img src="../images/camera.jpg" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(3)">
+          <img src="../images/sonny.png" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(4)">
+          <img src="../images/prada.jpg" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(5)">
+          <img src="../images/snoopy.jpeg" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(6)">
+          <img src="../images/new_york.jpeg" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(7)">
+          <img src="../images/ice_cream.jpeg" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(8)">
+          <img src="../images/cat.jpeg" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(9)">
+          <img src="../images/book.JPG" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(10)">
+          <img src="../images/steak1.png" alt="" />
+        </div>
+        <div class="media" onclick="showOverlay(11)">
+          <img src="../images/clue.jpeg" alt="" />
+        </div>
+      </div>
+    </section>
+
     <footer>
       <p>&copy; 2024 Megan Parada. All Rights Reserved.</p>
     </footer>
     <script src="../scripts/jquery.min.js"></script>
     <script src="../scripts/page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   </body>
 </html>

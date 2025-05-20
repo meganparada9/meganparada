@@ -122,27 +122,26 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const textEl = document.querySelector("#text");
   textEl.style.opacity = 1;
 
-  // Split into words
   const words = textEl.innerText.trim().split(" ");
-  textEl.innerHTML = ""; // Clear original text
+  textEl.innerHTML = "";
 
   const tempLine = document.createElement("div");
   tempLine.style.display = "inline-block";
   tempLine.style.whiteSpace = "nowrap";
+  tempLine.style.visibility = "hidden";
+  document.body.appendChild(tempLine);
 
-  let lines = [];
+  const lines = [];
   let currentLine = document.createElement("div");
-  currentLine.classList.add("line");
+  currentLine.className = "line";
 
-  document.body.appendChild(tempLine); // Append once
-
-  for (let i = 0; i < words.length; i++) {
+  words.forEach((word, i) => {
     const wordSpan = document.createElement("span");
-    wordSpan.textContent = words[i] + " ";
+    wordSpan.textContent = word + " ";
     wordSpan.style.display = "inline-block";
 
     tempLine.appendChild(wordSpan);
@@ -150,33 +149,63 @@ window.addEventListener("DOMContentLoaded", () => {
     if (tempLine.offsetWidth > textEl.offsetWidth && i !== 0) {
       lines.push(currentLine);
       currentLine = document.createElement("div");
-      currentLine.classList.add("line");
+      currentLine.className = "line";
       currentLine.appendChild(wordSpan);
       tempLine.innerHTML = wordSpan.outerHTML;
     } else {
       currentLine.appendChild(wordSpan.cloneNode(true));
     }
-  }
+  });
 
   lines.push(currentLine);
   document.body.removeChild(tempLine);
 
-  lines.forEach((line) => {
+  lines.forEach((line, i) => {
     const spanWrapper = document.createElement("span");
     spanWrapper.innerHTML = line.innerHTML;
     line.innerHTML = "";
     line.appendChild(spanWrapper);
+    line.style.opacity = "0";
+    line.style.transform = "translateY(100%)";
+    line.style.transition = "all 0.6s ease-out";
     textEl.appendChild(line);
-  });
 
-  gsap.from("#text .line span", {
-    yPercent: 100,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: "expo.out",
+    // Animate with stagger
+    setTimeout(() => {
+      line.style.opacity = "1";
+      line.style.transform = "translateY(0)";
+    }, i * 100); // 100ms stagger
   });
 });
+
+function animateText(elementId, text, delay) {
+  const element = document.getElementById(elementId);
+  const lines = text.split("\n");
+  let index = 0;
+
+  function printLine() {
+    if (index < lines.length) {
+      element.textContent += lines[index] + "\n";
+      index++;
+      setTimeout(printLine, delay);
+    }
+  }
+  element.textContent = ""; // Clear initial text
+  printLine();
+}
+
+// Example usage:
+const myText = `As a motivated person early in my career, it is my goal to learn as much
+      as possible about the software engineering space and provide creative,
+      innovative solutions to problems. Outside of work, I have many passions
+      such as music, photography, food, and sports.`;
+
+animateText("about-me", myText, 1000);
+
+document.addEventListener(
+  "DOMContentLoaded",
+  animateText("text", myText, 1000)
+);
 
 const facts = [
   "I love lemons!",

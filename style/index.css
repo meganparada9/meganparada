@@ -79,6 +79,135 @@ nav a:hover {
   border-color: #ff6f91;
 }
 
+.timeline-wrapper {
+  max-width: 100vw;
+  height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.timeline {
+  height: 0.12rem;
+  padding: 0 4rem;
+  list-style-type: none;
+  background-color: black;
+  --scale: 1;
+  display: flex;
+}
+
+.timeline li {
+  position: relative;
+  width: 20rem;
+}
+
+.timeline li .title {
+  font: 600 1.1rem;
+  white-space: pre;
+  opacity: 0;
+}
+
+.timeline li:nth-child(odd) .title {
+  top: -2.4rem;
+}
+
+.timeline li:nth-child(even) .title {
+  top: 2.4rem;
+}
+
+.timeline li:hover .title {
+  opacity: 1;
+}
+
+.timeline li::before,
+.timeline li::after,
+.data,
+.timeline li .title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  transition: 0.5 ease;
+}
+
+.timeline li::before {
+  top: 1rem;
+  content: "";
+  display: inline-block;
+  width: 0.12rem;
+  height: 1rem;
+  background-color: #232323;
+}
+
+.timeline li:hover::before {
+  background-color: #f093be;
+}
+
+.timeline li:nth-child(even)::before {
+  top: -1rem;
+}
+
+.timeline li::after {
+  content: attr(data-date);
+  top: -3.4rem;
+}
+
+.timeline li:nth-child(odd)::after {
+  top: 3.4rem;
+}
+
+.data {
+  width: 1.3rem;
+  height: 1.3rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #232323;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  transition: 0.3s ease;
+}
+
+.data h3 {
+  font-style: bold;
+}
+
+.data p {
+  padding: 1rem;
+  margin-left: 0.7rem;
+  border-radius: 2rem;
+  background-color: #f0bad3;
+}
+
+.data.show p {
+  margin-left: 0;
+}
+
+.data .close {
+  align-self: flex-start;
+  padding: 0.5rem 0.8rem;
+  border-radius: 2rem;
+  background-color: #bab8b9;
+}
+
+.timeline li:hover .data {
+  background-color: #f093be;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.data.show {
+  width: 22rem;
+  height: 22rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #f093be;
+  z-index: 100;
+}
+
 /* Container */
 .container {
   max-width: 900px;
@@ -367,6 +496,10 @@ h2#about-me {
 
 #click-text {
   margin-bottom: 150px;
+}
+
+#dot-text {
+  text-align: center;
 }
 
 @media (max-width: 768px) {

@@ -194,20 +194,7 @@ function animateText(elementId, text, delay) {
   printLine();
 }
 
-// Example usage:
-const myText = `As a motivated person early in my career, it is my goal to learn as much
-      as possible about the software engineering space and provide creative,
-      innovative solutions to problems. Outside of work, I have many passions
-      such as music, photography, food, and sports.`;
-
-animateText("about-me", myText, 1000);
-
-document.addEventListener(
-  "DOMContentLoaded",
-  animateText("text", myText, 1000)
-);
-
-const facts = [
+const facts_list = [
   "I love lemons!",
   "Elephants are my favorite animal.",
   "I still use the digital camera I got in 8th grade and use it to capture my life.",
@@ -223,9 +210,10 @@ const facts = [
 ];
 function showOverlay(num) {
   console.log("num", num);
-  console.log($("#facts-text").innerHTML);
+  console.log($("#facts-text").html());
   $(".overlay").show();
-  $("#facts-text").text(facts[num]);
+  console.log("sentence", facts_list[num]);
+  $("#facts-text").html(facts_list[num]);
   $(".facts").show();
 }
 
@@ -233,3 +221,14 @@ function closeOverlay() {
   $(".overlay").hide();
   $(".facts").hide();
 }
+
+const timeline_wrapper = document.querySelector(".timeline-wrapper");
+const timelines = document.querySelectorAll(".timeline li .data");
+
+for (const time of timelines) {
+  time.onclick = () => time.classList.toggle("show");
+}
+
+timeline_wrapper.addEventListener("mousemove", (event) => {
+  const timeline = document.querySelector(".timeline");
+});
